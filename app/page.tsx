@@ -1,12 +1,33 @@
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1>test de mise en prod</h1>
+    <div className="min-h-screen p-8 pb-20 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <Head>
+        <title>CV - Ethan Legris</title>
+        <meta name="description" content="Étudiant de 1ère année à Enigma" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {/* 👇 Centré horizontalement avec mx-auto, contenu centré aussi */}
+      <main className="flex flex-col items-center gap-8 max-w-3xl mx-auto text-center">
+        <Image
+          src="/portrait.jpg"
+          alt="Photo de profil"
+          width={300}
+          height={300}
+          className="rounded-full shadow-md"
+        />
+
+        <section className="flex flex-col gap-4">
+          <h1 className="text-4xl font-bold">Ethan Legris</h1>
+          <p className="text-lg text-gray-600">Étudiant de 1ère année à Enigma</p>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+
+      <footer className="mt-16 flex gap-6 flex-wrap items-center justify-center text-sm text-gray-500">
+        © 2025 - CV en ligne éco-responsable
       </footer>
     </div>
   );
